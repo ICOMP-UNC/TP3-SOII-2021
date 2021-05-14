@@ -105,7 +105,7 @@ Respuesta
 El  _\<Mensaje\>_ para el log será:  _Usuario listados: \<cantidad de usuario del SO\>_
  
 ### Servicio de descarga
-Este servicio pondra en disposición links de descarga de archivos de GOES. Ante la peticion de un usuario (POST), si el o los archivos solicitados ya ha sido descargado con anterioridad, se le avisa al suario que ya existe y se envia el link. Ante la peticion de un usuario de un archivo que no ha sido descargado, se debe avisar al usuario que no existe y que se debe descargar, se descarga de AWS S3 el o los archivos peticionados (en bakcground) y se avisa al usuario una vez que ha sido descargado. En ambos casos, la respuesta siempre es se debe retornar el link de descarga del tipo _http://{{server}}/data/filename_, para cada archivo, de donde el usuario pordrá obtener el o los archivos.
+Este servicio pondra en disposición links de descarga de archivos de GOES. Ante la peticion de un usuario (POST), si el archivo solicitado ya ha sido descargado con anterioridad, se le avisa al suario que ya existe y se envia el link. Ante la peticion de un usuario de un archivo que no ha sido descargado, se debe avisar al usuario que no existe y que se debe descargar, se descarga de AWS S3 el archivo peticionado (en bakcground) y se avisa al usuario una vez que ha sido descargado. En ambos casos, la respuesta siempre es se debe retornar el link de descarga del tipo _http://{{server}}/data/filename_, de donde el usuario pordrá obtener el o los archivos.
 
 #### POST /api/servers/get_goes
 ```C
@@ -140,10 +140,10 @@ Respuesta
     }
 ```
 
-El formato del campo _datetime_, deve ser definido por ustedes.
+El formato del campo _datetime_, deve ser definido por ustedes, pero debe conetenr año, día juliano y hora. El archivo a descargar será el primer arcvhivo de cada hora.
 El log tendrá dos partes:
- -  _Archivos descargados nuevos: <cantidad de archivos descargados nuevos>_
- -  _Archivos descargados preexistentes: <cantidad de descargados preexistentes>_
+ -  _Archivos descargados nuevos: \<cantidad de archivos descargados nuevos\>_
+ -  _Archivos descargados preexistentes: \<cantidad de descargados preexistentes\>_
     
 #### GET /api/servers/get_goes
 Este endpoint perimte al usuario conocer la lista de archivos que hay en el server
@@ -176,7 +176,7 @@ Respuesta
     }
 ```
 
-El _<Mensaje>_ para el log será: _ Archivos en el server: <cantidad de archivos en el server>_.
+El _\<Mensaje\>_ para el log será: _ Archivos en el server: \<cantidad de archivos en el server\>_.
     
 
  
