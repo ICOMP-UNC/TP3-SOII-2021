@@ -3,30 +3,30 @@
 # Sistemas Embebidos
 
 ## Introducción
-Los _sistemas embebidos_ suelen ser accedidos de manera remota, una forma común, suelen ser las _RESTful APIs_. Estas, brindan una interfaz definida y robusta para la comunicación y manipulación del _sistema embebido_ de manera remota. Definidas para un esquema _Cliente-Servidor_ se utilizan en todas las verticales de la industria tecnológica, desde aplicaciones de _IoT_ hasta juegos multijugador.
+Los _sistemas embebidos_ suelen ser accedidos de manera remota. Existen distintas tenicas para hacerlo, una forma muy utilizada suelen ser las _RESTful APIs_. Estas, brindan una interfaz definida y robusta para la comunicación y manipulación del _sistema embebido_ de manera remota. Definidas para un esquema _Cliente-Servidor_ se utilizan en todas las verticales de la industria tecnológica, desde aplicaciones de _IoT_ hasta juegos multijugador.
 
 ## Objetivo
-El objetivo del presente trabajo practico es que el estudiante tenga un visión \textit{end to end} de una implementación básica de una \textit{RESTful API} sobre un \textit{sistema enbedido}.
-El estudiante deberá implementarlo interactuando con todas las capas del procesos. Desde el \textit{testing} funcional (alto nivel) hasta el código en C del servicio (bajo nivel).
+El objetivo del presente trabajo práctico es que el estudiante tenga un visión _end to end_ de una implementación básica de una _RESTful API_ sobre un _sistema enbedido_.
+El estudiante deberá implementarlo interactuando con todas las capas del procesos. Desde el _testing_ funcional (alto nivel) hasta el código en C del servicio (bajo nivel).
 
 ## Desarrollo
 ### Requerimientos
-Para realizar el presente trabajo practico, es necesario una computadora con _kernel_ GNU/Linux, ya que usaremos  [SystemD][sysD] para implementar el manejo de nuestro servicios.
+Para realizar el presente trabajo practico, es necesario una computadora con _kernel_ GNU/Linux, ya que usaremos [SystemD][sysD] para implementar el manejo de nuestro servicios.
 
 ### Desarrollo
-Se deberá implementar dos servicios en lenguaje C, estos son el _servicio de usuarios_ y el _servicio de status_. Ambos servicios, deberán exponer una _REST API_. Con el objetivo de acelerar el proceso de desarrollo vamos a utilizar un _framework_: se propone utilizar https://github.com/babelouest/ulfius. El estudiante puede seleccionar otro, justificando la selección, o implementar el propio (no recomendado).
-El servicio debe tener configurado un _nginx_ [ref] por delante para poder direccionar el _request_ al servicio correspondiente.
+Se deberá implementar tres servicios en lenguaje C, estos son el _servicio de usuarios_, el _servicio de descarga_ y el _servicio de instalacion_. Cada servicio deberá exponer una _REST API_. Con el objetivo de acelerar el proceso de desarrollo vamos a utilizar un _framework_: se propone utilizar https://github.com/babelouest/ulfius. El estudiante puede seleccionar otro, justificando la selección, o implementar el propio (no recomendado).
+El servicio debe tener configurado un [nginx][ngnx] por delante para poder direccionar el _request_ al servicio correspondiente.
 El web server, deberá autenticar el _request_ por medio de de un usuario y password enviado en el _request_, definido donde el estudiante crea conveniente. Las credenciales no deberán ser enviadas a los servicios. 
 
 El web server deberá  retornar _404 Not Found_ para cualquier otro _path_ no existente.
 
 A modo de simplificación, usaremos sólo _HTTP_, pero aclarando que esto posee *graves problemas de seguridad*.
-Ambos servicios deben estar configurados con _SystemD_ para soportar los comandos, _restart_, _reload_, _stop_, _start_ y deberán ser inicializados de manera automática cuando el sistema operativo _botee_.
+Todos los servicios deben estar configurados con _SystemD_ para soportar los comandos, _restart_, _reload_, _stop_, _start_ y deberán ser inicializados de manera automática cuando el sistema operativo _botee_.
 
-Ambos servicios deber _logear_ todas sus peticiones con el siguiente formato:
+Los servicios deber _logear_ todas sus peticiones con el siguiente formato:
 
 ```sh
-    <Timestamp>|<Nombre Del Servicio>| <Mensaje>
+    <Timestamp> | <Nombre Del Servicio> | <Mensaje>
 ```
 
 El _<Mensaje>_ sera definido por cada una de las acciones de los servicios.
@@ -51,24 +51,25 @@ Endpoints para la creación de usuario en el sistema operativo:
 
 ```C
     POST http://{{server}}/api/users
-    \end{lstlisting}
-    Request
-    \begin{lstlisting}[language=C]
+```
+Request
+```C    
         curl --request POST \
             --url http:// {server}}/api/users \
             -u USER:SECRET \
             --header 'accept: application/json' \
             --header 'content-type: application/json' \
             --data '{"username": "myuser", "password": "mypassword"}'
-    \end{lstlisting}
-    Respuesta
-    \begin{lstlisting}
+```
+Respuesta
+```C
+
         {
             "id": 142,
             "username": "myuser",
             "created_at": "2019-06-22 02:19:59"
         }
-    \end{lstlisting}
+
 ```
 El _<Mensaje>_ para el log será: _Usuario <Id> creado_
   
@@ -150,4 +151,5 @@ El presente trabajo práctico es individual deberá entregarse antes del jueves 
 - [Ulfius HTTP Framework](https://github.com/babelouest/ulfius)
 - [Kore Web PLataform](https://kore.io/)
 
-[sysD][https://www.freedesktop.org/wiki/Software/systemd/]
+[sysD]: https://www.freedesktop.org/wiki/Software/systemd/
+[ngnx]: https://docs.nginx.com/
