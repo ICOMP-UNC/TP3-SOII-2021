@@ -34,7 +34,7 @@ El _\<Mensaje\>_ sera definido por cada una de las acciones de los servicios.
 El gráfico \ref{fig:arq} se describe la arquitectura requerida.
 
 
- ![Arquitectura del sistema](Web App Reference Architecture (1).png)
+![Arquitectura del sistema](Web_App.png)
 
 
 A continuación, detallaremos los dos servicios a crear y las funcionalidades de cada uno.
