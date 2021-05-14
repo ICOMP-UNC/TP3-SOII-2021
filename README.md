@@ -33,12 +33,8 @@ El _\<Mensaje\>_ sera definido por cada una de las acciones de los servicios.
 
 El gráfico \ref{fig:arq} se describe la arquitectura requerida.
 
-\begin{figure}
-    \centering
-    \includegraphics[width=14cm]{WebAppReferenceArchitecture}
-    \label{fig:arq}
-    \caption{Arquitectura del sistema}
-\end{figure}
+
+ ![Arquitectura del sistema](Web App Reference Architecture (1).png)
 
 
 A continuación, detallaremos los dos servicios a crear y las funcionalidades de cada uno.
