@@ -29,7 +29,7 @@ Los servicios deber _logear_ todas sus peticiones con el siguiente formato:
     <Timestamp> | <Nombre Del Servicio> | <Mensaje>
 ```
 
-El _<Mensaje>_ sera definido por cada una de las acciones de los servicios.
+El _\<Mensaje\>_ sera definido por cada una de las acciones de los servicios.
 
 El gráfico \ref{fig:arq} se describe la arquitectura requerida.
 
