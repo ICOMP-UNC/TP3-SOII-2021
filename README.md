@@ -201,7 +201,7 @@ Los servicios deberán pasar una batería de test escritas en _postman_ provista
 
 
 ## Evaluación
-El presente trabajo práctico es individual deberá entregarse antes del jueves 4 de junio de 2020 a las 23:55 mediante el LEV.  Será corregido y luego deberá coordinar una fecha para la defensa oral del mismo.
+El presente trabajo práctico es individual deberá entregarse antes del jueves 3 de junio de 2021 a las 23:55 mediante el LEV.  Será corregido y luego deberá coordinar una fecha para la defensa oral del mismo.
 
 ## Referencias y ayudas
 - [Systrem D ](https://systemd.io/)
