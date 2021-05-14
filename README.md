@@ -1,5 +1,6 @@
-# TP3-SOII-2021
-Trabajo práctico 3 de Sistemas Operativos II - FCEFyN - UNC
+### TP3 Sistemas Operativos II
+## Ingeniería en Compuatación - FCEFyN - UNC
+# Sistemas Embebidos
 
 ## Introducción
 Los _sistemas embebidos_ suelen ser accedidos de manera remota, una forma común, suelen ser las _RESTful APIs_. Estas, brindan una interfaz definida y robusta para la comunicación y manipulación del _sistema embebido_ de manera remota. Definidas para un esquema _Cliente-Servidor_ se utilizan en todas las verticales de la industria tecnológica, desde aplicaciones de _IoT_ hasta juegos multijugador.
