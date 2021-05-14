@@ -11,7 +11,7 @@ El estudiante deberá implementarlo interactuando con todas las capas del proces
 
 ## Desarrollo
 ### Requerimientos
-Para realizar el presente trabajo practico, es necesario una computadora con _kernel_ GNU/Linux, ya que usaremos _SystemD_ [ref] para implementar el manejo de nuestro servicios.
+Para realizar el presente trabajo practico, es necesario una computadora con _kernel_ GNU/Linux, ya que usaremos _SystemD_ [1] para implementar el manejo de nuestro servicios.
 
 ### Desarrollo
 Se deberá implementar dos servicios en lenguaje C, estos son el _servicio de usuarios_ y el _servicio de status_. Ambos servicios, deberán exponer una _REST API_. Con el objetivo de acelerar el proceso de desarrollo vamos a utilizar un _framework_: se propone utilizar https://github.com/babelouest/ulfius. El estudiante puede seleccionar otro, justificando la selección, o implementar el propio (no recomendado).
@@ -144,7 +144,7 @@ Los servicios deberán pasar una batería de test escritas en _postman_ provista
 El presente trabajo práctico es individual deberá entregarse antes del jueves 4 de junio de 2020 a las 23:55 mediante el LEV.  Será corregido y luego deberá coordinar una fecha para la defensa oral del mismo.
 
 ## Referencias y ayudas
-[Systrem D ](https://systemd.io/)
+[1][Systrem D ](https://systemd.io/)
 [System D en Freedesktop](https://www.freedesktop.org/wiki/Software/systemd/)
 [nginx](https://docs.nginx.com/)
 [Ulfius HTTP Framework](https://github.com/babelouest/ulfius)
